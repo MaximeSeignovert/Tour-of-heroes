@@ -1,0 +1,41 @@
+
+<select name="users" id="users_select" [(ngModel)]="selected_user">
+  <option *ngFor="let user of users" [ngValue]="user">{{ user.username }}</option>
+</select>
+
+  <button  (click)="this.assignUser()">Select User</button>
+
+<br>
+
+<label for="cars">Trier par </label>
+<select name="carac" id="carac_id" (change)="updateTop()">
+  <option value="esquive">💨 Esquive</option>
+  <option value="attaque">🗡️ Attaque</option>
+  <option value="degats">💥 Degats</option>
+  <option value="pv">❤️ Pv</option>
+</select>
+
+<div class="main-content">
+  <div class="categorie">
+    <h2>Top Heroes</h2>
+    <p *ngIf="heroes==[]" >CHARGEMENT</p>
+    <div class="heroes-menu">
+        <a *ngFor="let hero of heroes"
+        routerLink="/detail/{{hero.id}}">
+        {{hero.name}}
+      </a>
+    </div>
+  </div>
+  
+  <div class="categorie">
+    <h2>Top Weapons</h2>
+    <div class="weapons-menu">
+      <a *ngFor="let weapon of weapons"
+      routerLink="/weapons/details/{{weapon.id}}">
+      {{weapon.name}}
+    </a>
+    </div>
+  </div>
+  
+</div>
+

@@ -1,0 +1,114 @@
+/* HeroesComponent's private CSS styles */
+.heroes {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width:fit-content;
+  
+}
+
+.heroes li {
+  display: flex;
+  align-items: center;
+
+  position: relative;
+
+  cursor: pointer;
+  
+}
+
+.heroes li:hover {
+  left: .1em;
+}
+
+.heroes a {
+  color: #333;
+  text-decoration: none;
+  background-color: #EEE;
+  margin: .5em;
+  padding: 0.3em 1.5em 0.3em 0;
+  height: 1.6em;
+  border-radius: 4px;
+  display: block;
+  width: 100%;
+}
+
+.heroes a:hover {
+  color: #2c3a41;
+  background-color: #e6e6e6;
+}
+
+.heroes a:active {
+  background-color: #525252;
+  color: #fafafa;
+}
+
+.heroes .badge {
+  display: inline-block;
+  font-size: small;
+  color: white;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color: #405061;
+  line-height: 1em;
+  position: relative;
+  left: -1px;
+  top: -4px;
+  height: 1.8em;
+  min-width: 16px;
+  text-align: right;
+  margin-right: .8em;
+  border-radius: 4px 0 0 4px;
+}
+
+.add_hero{
+  display: inline-block;
+  font-size:medium;
+  color: white;
+  padding: 0.4em 0.7em 0.4em 0.7em;
+  background-color: #157e00;
+  height: 1.8em;
+  min-width: 16px;
+  text-align: right;
+  margin: 0.5em ;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+}
+.add_hero:hover{
+  background-color: #24d600;
+  color: black;
+}
+
+.delete_hero{
+  display: inline-block;
+  font-size: small;
+  color: white;
+  padding: 0.4em 0.8em 0.4em 0.8em;
+  background-color: #7e0000;
+  border-radius: 5px;
+}
+.delete_hero:hover{
+  background-color: #ff4747;
+  color: black;
+}
+
+select{
+  background-color: #3f525c;
+  border-radius: 6px;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  text-decoration: none;
+  display: inline-block;
+  color: #fff;
+  text-align: center;
+  width: fit-content;
+  min-width: 70px;
+  margin: .5rem auto;
+  box-sizing: border-box;
+}
+
+select option{
+  background-color: #fff;
+  color: #000;
+  text-align: left;
+}

@@ -1,0 +1,108 @@
+/* DashboardComponent's private CSS styles */
+
+h2 {
+    text-align: center;
+  }
+  
+  .heroes-menu {
+    padding: 0;
+    margin: auto;
+    max-width: 1000px;
+  
+    /* flexbox */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .weapons-menu {
+    padding: 0;
+    margin: auto;
+    max-width: 1000px;
+  
+    /* flexbox */
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: flex-start;
+    align-items: flex-start;
+  }
+  
+  a {
+    background-color: #3f525c;
+    border-radius: 4px;
+    padding: 1rem;
+    font-size: 1.2rem;
+    text-decoration: none;
+    display: inline-block;
+    color: #fff;
+    text-align: center;
+    width: 100%;
+    min-width: 70px;
+    margin: .5rem auto;
+    box-sizing: border-box;
+  
+    /* flexbox */
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+  }
+  
+  @media (min-width: 600px) {
+    a {
+     
+      box-sizing: content-box;
+    }
+  }
+  
+  a:hover {
+    background-color: #000;
+  }
+
+  select{
+    background-color: #3f525c;
+    border-radius: 6px;
+    padding: 0.7rem;
+    font-size: 1.2rem;
+    text-decoration: none;
+    display: inline-block;
+    color: #fff;
+    text-align: center;
+    width: fit-content;
+    min-width: 70px;
+    margin: .5rem auto;
+    box-sizing: border-box;
+  }
+
+  select option{
+    background-color: #fff;
+    color: #000;
+    text-align: left;
+  }
+
+  .arena{
+    display: flex;
+    justify-content: center;
+  }
+
+  .main-content{
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-direction: row;
+  }
+
+  .categorie{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  .categorie div{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+  }

@@ -1,0 +1,112 @@
+h1 {
+    margin-bottom: 0;
+  }
+  nav{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    background-color: lightgray;
+    border-radius: 5px;
+  }
+  nav a {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    padding:2vh;
+    text-decoration: none;
+    margin: 10px;
+    background-color: #e8e8e8;
+    color: #3d3d3d;
+    border-radius: 4px;
+  }
+  
+  nav a:hover {
+    color: white;
+    background-color: #42545C;
+  }
+  nav a:active {
+    background-color: black;
+  }
+
+
+
+.arena_button {
+  width: fit-content;
+  display: flex;
+  padding: 0.8em 1.1em;
+  gap: 0.4rem;
+  border: none;
+  font-weight: bold;
+  border-radius: 4px;
+  
+  background: linear-gradient(15deg, rgba(186,14,0,1) 0%, rgba(255,139,0,1) 100%) no-repeat;
+  background-size: 300%;
+  background-position: left center;
+  transition: background .3s ease;
+  color: #fff;
+}
+
+.arena_button:hover {
+  background-size: 320%;
+  background-position: right center;
+  text-shadow: 2px 2px 3px rgb(136 0 136 / 50%);
+}
+
+.arena_button:hover svg {
+  fill: #f3c891;
+}
+
+.arena_button svg {
+  width: 23px;
+  fill: #f09f33;
+  transition: .3s ease;
+}
+
+.arena{
+  display: flex;
+  justify-content: center;
+}
+
+div.shop{
+  display: flex;
+  justify-content: center;
+}
+
+.shop_button {
+  width: fit-content;
+  display: flex;
+
+  padding: 0.8em 1.1em;
+  gap: 0.4rem;
+  border: none;
+  font-weight: bold;
+  border-radius: 4px;
+
+  background: linear-gradient(15deg, rgb(3, 0, 186) 0%, rgba(100, 185, 255,1) 100%) no-repeat;
+  background-size: 300%;
+  background-position: left center;
+  transition: background .3s ease;
+  color: #fff;
+}
+
+.shop_button:hover {
+  background-size: 320%;
+  background-position: right center;
+  text-shadow: 2px 2px 3px rgb(136 0 136 / 50%);
+}
+
+.shop_button svg {
+  width: 23px;
+  transition: .3s ease;
+}
+
+.shop_button svg path:nth-child(1){
+  fill:red;
+}
+
+.shop_button svg path:nth-child(2){
+  fill:white;
+}
+  

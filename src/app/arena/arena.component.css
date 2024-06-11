@@ -1,0 +1,87 @@
+
+.arena{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;
+    
+}
+
+.arena .player{
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(15deg, rgba(186,14,0,0.3) 0%, rgba(255,139,0,0.3) 100%) no-repeat;
+    padding: 1em;
+    border: 1px outset black;
+    border-radius: 10px;
+}
+
+.arena .player .selection_hero{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.arena .player .selection_hero label{
+    white-space: nowrap;
+}
+
+.arena .game{
+    width: 33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.selection button {
+    border: none;
+    display: block;
+    position: relative;
+    padding: 0.7em 2.4em;
+    font-size: 18px;
+    cursor: pointer;
+    user-select: none;
+    overflow: hidden;
+    color: linear-gradient(15deg, rgba(186,14,0,1) 0%, rgba(255,139,0,1) 100%) no-repeat;;
+    z-index: 1;
+    font-family: inherit;
+    font-weight: 500;
+}
+  
+.selection button span {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    z-index: -1;
+    border: 4px solid linear-gradient(15deg, rgba(186,14,0,1) 0%, rgba(255,139,0,1) 100%) no-repeat;;
+}
+
+.selection button span::before {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 0%;
+    height: 500%;
+    background: rgba(255,139,0,1);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-60deg);
+    transition: all 0.3s;
+}
+
+.selection button:hover span::before {
+    transform: translate(-50%, -50%) rotate(-90deg);
+    width: 100%;
+    background: linear-gradient(15deg, rgba(186,14,0,1) 0%, rgba(255,139,0,1) 100%) no-repeat;
+}
+
+.selection button:hover {
+    color: white;
+}
+
+.selection button:active span::before {
+    background: linear-gradient(15deg, rgba(186,14,0,1) 0%, rgba(255,139,0,1) 100%) no-repeat;
+}

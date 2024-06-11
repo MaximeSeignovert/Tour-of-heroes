@@ -1,0 +1,72 @@
+<button type="button" (click)="goBack()">go back</button>
+
+<div class="arena">
+    
+    <div class="player">
+        
+        <div class="selection_hero" *ngIf="heroes">
+            <label for="heroes">Choisir un héro</label>
+            <select name="heroes" id="heros_id" [(ngModel)]="selected_player1_hero">
+              <option *ngFor="let hero of selectableHeroes" [ngValue]="hero">{{ hero.name }}</option>
+            </select>
+            <button (click)="selectPlayer1()">Selectionner hero</button>
+        </div>
+        
+        <div class="interface_hero" *ngIf="player1">
+            Héro selectionné {{player1.name}} <br>
+            ❤️ {{this.player1.stats[3]}} {{this.getBarreDeVie(this.player1.stats[3])}}
+        </div>
+
+        
+
+    </div>
+
+    <div class="game">
+        <div *ngIf="this.fightState === FightState.selection" class="selection">
+            <div *ngIf="player1 && player2" class="startFight">
+                <p>{{player1.name}} VS {{player2.name}}</p>
+                <button (click)="fight()">FIGHT
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    
+        
+        <div *ngIf="this.fightState === FightState.fight">
+            <div *ngIf="fightIntervalId">
+                <button (click)="this.stopFight()">
+                    STOP FIGHT
+                </button>
+            </div>
+        </div>
+    
+        <div *ngIf="this.fightState === FightState.end">
+            <div>
+                <button (click)="this.retry()">
+                    NEW SELECTION
+                </button>
+            </div>
+        </div>
+    </div>
+    
+
+    <div class="player">
+
+        <div class="selection_hero" *ngIf="heroes">
+            <label for="heroes">Choisir un héro</label>
+            <select name="heroes" id="heros_id" [(ngModel)]="selected_player2_hero">
+              <option *ngFor="let hero of selectableHeroes" [ngValue]="hero">{{ hero.name }}</option>
+            </select>
+            <button (click)="selectPlayer2()">Selectionner hero</button>
+        </div>
+        
+        <div class="interface_hero" *ngIf="player2">
+            Héro selectionné {{player2.name}}<br>
+            ❤️ {{this.player2.stats[3]}} {{this.getBarreDeVie(this.player2.stats[3])}}
+        </div>
+
+
+    </div>
+</div>
+
+<app-messages></app-messages>

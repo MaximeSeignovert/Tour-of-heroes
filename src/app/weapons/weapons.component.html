@@ -1,0 +1,23 @@
+<h2>My Weapons</h2>
+<label for="cars">Trier par </label>
+<select name="carac" id="carac_id" (change)="orderWeapons()">
+  <option value="esquive">💨 Esquive</option>
+  <option value="attaque">🗡️ Attaque</option>
+  <option value="degats">💥 Degats</option>
+  <option value="pv">❤️ Pv</option>
+</select>
+
+<br>
+Rechercher Weapon <input type="text" minlength="4" size="20" [(ngModel)]="termeRecherche" (input)="getFilteredWeapons()"/>
+
+<ul class="weapons">
+  <li (click)="addNewWeapon()" class="add_weapon">
+    ➕ AJOUTER WEAPON ➕
+  </li>
+  <li *ngFor="let weapon of filteredWeapons">
+    <a routerLink="details/{{weapon.id}}">
+      <span class="badge">👉</span> {{weapon.name}}
+    </a><button class="delete_weapon" (click)="deleteWeapon(weapon.id)">❌</button>
+  </li>
+  
+</ul>

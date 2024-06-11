@@ -1,0 +1,41 @@
+<p *ngIf="this.serverStatus==true">🟢 Shop is open</p>
+<p *ngIf="this.serverStatus==false">🔴 Shop is closed</p>
+
+<div *ngIf="this.user!=undefined">
+    <p>{{user.username}}: {{user.coins}} 🪙</p>
+</div>
+
+<select name="" id="">
+    <option *ngFor="let categorie of categories" value="categorie">{{categorie.name}}</option>
+</select>
+
+<div class="products">
+    <li *ngFor="let product of listProduit" class="product">
+            <div class="name">
+                {{product.name}}
+                <button (click)="this.deleteProduct(product.id)">X</button>
+            </div>
+            <div class="stats">
+                <div>🗡️ {{product.stats.attaque}}</div>
+                <div>💨 {{product.stats.esquive}}</div>
+                <div>💥 {{product.stats.degats}}</div>
+                <div>❤️ {{product.stats.pv}}</div>
+            </div>
+            <div class="price">
+                {{product.price}}🪙
+            </div>
+            <button class="buy_button" (click)="this.buyProduct(product.id)">BUY</button>
+    </li>
+    <button *ngIf="this.serverStatus" (click)="this.addWeapon();this.buy(5)">5🪙 to add</button>
+</div>
+
+
+
+
+<div *ngIf="this.user" class="history">
+    <h2>{{user.username}}'s history</h2>
+    <li *ngFor="let order of orders" class="order">
+        <p>{{order.orderDate}}</p>
+        <p>Total {{order.total}}🪙</p>
+    </li>
+</div>

@@ -1,0 +1,63 @@
+<div *ngIf="hero">
+
+    <h2>{{hero.name | uppercase}} Details</h2>
+    <input type="text" [(ngModel)]="hero.name" required minlength="4" size="20" />
+    <div><span>id: </span>{{hero.id}}</div>
+
+    <div class="stat_row">
+      <label>🗡️ Attaque</label>
+      <input type="number" id="attaque" [(ngModel)]="hero.attributes[0]" [formControl]="attaqueFormControl" (ngModelChange)="checkAttaque()" min="0">
+      <p [ngStyle]="{'color': weapon.attaque>0 ? '#0f0' : '#f00' }" *ngIf="weapon"> {{weapon.attaque}}</p>
+    </div>
+    <div class="stat_row">
+      <label>💨 Esquive</label>
+      <input type="number" id="esquive" [(ngModel)]="hero.attributes[1]" [formControl]="esquiveFormControl" (ngModelChange)="checkEsquive()"  min="0">
+      <p [ngStyle]="{'color': weapon.esquive>0 ? '#0f0' : '#f00' }" *ngIf="weapon"> {{weapon.esquive}}</p>
+    </div>
+    <div class="stat_row">
+      <label>💥 Dégâts</label>
+      <input type="number" id="degats" [(ngModel)]="hero.attributes[2]" [formControl]="degatsFormControl" (ngModelChange)="checkDegats()"  min="0">
+      <p [ngStyle]="{'color': weapon.degats>0 ? '#0f0' : '#f00' }" *ngIf="weapon"> {{weapon.degats}}</p>
+    </div>
+    <div class="stat_row">
+      <label>❤️ Points de vie</label>
+      <input type="number" id="point de vie" [(ngModel)]="hero.attributes[3]" [formControl]="pvFormControl" (ngModelChange)="checkPv()"  min="0">
+      <p [ngStyle]="{'color': weapon.pv>0 ? '#0f0' : '#f00' }" *ngIf="weapon"> {{weapon.pv}}</p>
+    </div>
+    
+    <div>
+      <p>Points à répartir <span class="points">{{calculateRemainingCarac()}}🪙</span></p>
+      
+    </div>
+
+    <div>
+      
+    <button (click)="updateHero()">Update {{getUpdatedState()}}</button>
+
+
+  </div>
+
+
+  <div class="weapon" *ngIf="weapon && hero.weapon!=''">
+    <h2>{{hero.name | uppercase}} Weapon</h2>
+    <a routerLink="/weapons/details/{{weapon.id}}">
+      {{weapon.name}}
+    </a>
+    <button (click)="retirerArme()">Enlever arme</button>
+
+  </div>
+  
+  <div *ngIf="weapons && !weapon">
+    <label for="weapons">Choisir une arme</label>
+    <select name="weapons" id="weapons_id" [(ngModel)]="selectedWeapon">
+      <option *ngFor="let weapon of weapons" [ngValue]="weapon">{{ weapon.name }}</option>
+    </select>
+    <button *ngIf="canEquipWeapon()" (click)="ajouterArme()">Ajouter Arme</button>
+  </div>
+  <div *ngIf="!canEquipWeapon()" class="errorMessage">
+    <p>Vous ne pouvez pas équiper cette arme</p>
+  </div>
+  
+
+  </div>
+  <button type="button" (click)="goBack()">go back</button>

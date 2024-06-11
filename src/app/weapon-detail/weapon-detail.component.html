@@ -1,0 +1,43 @@
+<div *ngIf="weapon">
+
+    <h2>{{weapon.name | uppercase}} Details</h2>
+    <input type="text" [(ngModel)]="weapon.name" required minlength="4" size="20" />
+    <div><span>id: </span>{{weapon.id}}</div>
+
+    <div>
+      <label>🗡️ Attaque</label>
+      <input type="number" id="attaque" [(ngModel)]="weapon.attaque" [formControl]="attaque" (ngModelChange)="checkAttaque()">
+    </div>
+    <div>
+      <label>💨 Esquive</label>
+      <input type="number" id="esquive" [(ngModel)]="weapon.esquive" [formControl]="esquive" (ngModelChange)="checkEsquive()">
+    </div>
+    <div>
+      <label>💥 Dégâts</label>
+      <input type="number" id="degats" [(ngModel)]="weapon.degats" [formControl]="degats" (ngModelChange)="checkDegats()">
+    </div>
+    <div>
+      <label>❤️ Points de vie</label>
+      <input type="number" id="point de vie" [(ngModel)]="weapon.pv" [formControl]="pv" (ngModelChange)="checkPv()">
+    </div>
+    
+    <div>
+        <p *ngIf="calculateWeightWeapon() !== 0">
+            Poids de l'arme => {{ calculateWeightWeapon() }}
+        </p>
+        <button *ngIf="calculateWeightWeapon() === 0" (click)="updateWeapon()" >Update Weapon</button>
+
+
+    </div>
+
+    <div *ngIf="heroesHaveWeapon.length != 0">
+      <p>Heroes who equipped this weapon</p>
+      <div *ngFor="let hero of heroesHaveWeapon">
+        {{hero.name}}
+      </div>
+    </div>
+    
+
+
+  </div>
+  <button type="button" (click)="goBack()">go back</button>

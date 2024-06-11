@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "tour-of-heroes-6dc62": {
+      "hosting": {
+        "angular-tour-of-heroes-seignovm": [
+          "tour-of-heroes-6dc62"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "tour-of-heroes-6dc62"
+  }
+}

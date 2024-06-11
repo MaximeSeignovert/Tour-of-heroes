@@ -1,0 +1,25 @@
+<h2>My Heroes</h2>
+
+<label for="cars">Trier par </label>
+<select name="carac" id="carac_id" (change)="orderHeroes()">
+  <option value="esquive">💨 Esquive</option>
+  <option value="attaque">🗡️ Attaque</option>
+  <option value="degats">💥 Degats</option>
+  <option value="pv">❤️ Pv</option>
+</select>
+
+<br>
+Rechercher Héro <input type="text" size="20" [(ngModel)]="termeRecherche" (input)="getFilteredHeroes()"/>
+
+<ul class="heroes">
+  <li (click)="addNewHero()" class="add_hero">
+    ➕ AJOUTER HERO ➕
+  </li>
+  <li *ngFor="let hero of filteredHeroes">
+    <a routerLink="/detail/{{hero.id}}">
+      <span class="badge">👉</span> {{hero.name}}
+    </a><button class="delete_hero" (click)="deleteHero(hero.id)">❌</button>
+    
+  </li>
+  
+</ul>
